@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esummit 2024</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("img/login-signin/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form-container {
+            width: 400px;
+            max-height: 90vh; /* Limit the height to prevent overflow */
+            overflow-y: auto; /* Enable scrolling if content exceeds the container height */
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-title {
+            font-size: 28px; /* Adjusted font size */
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            text-align: center;
+            background-color: #3895e7;
+            color: white;
+            border-radius: 50px;
+            text-transform: capitalize;
+            text-decoration: none;
+            font-size: 16px;
+            border: none; /* Remove border for button */
+            cursor: pointer; /* Change cursor to pointer */
+        }
+
+        .btn:hover {
+            background-color: #307ac2;
+        }
+
+        .form-link {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+
+        .form-link a {
+            color: #3895e7;
+            text-decoration: none;
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <!-- Updated action to point to marketing.php for processing the form data -->
+        <form id="login-form" action="marketing.php" method="POST" enctype="multipart/form-data">
+            <h1 class="form-title">Marketing Maestro MITAOE</h1>
+
+            <label for="phone_number">Phone Number</label>
+            <input type="tel" id="phone_number" name="phone_number" placeholder="Enter your phone number" required pattern="[0-9]{10}">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="department">Department</label>
+            <select id="department" name="department" required>
+                <option value="" disabled selected>Select Your Department*</option>
+                <option value="Computer Science">Computer Science</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Mechanical">Mechanical</option>
+                <option value="Chemical">Chemical</option>
+                <option value="Civil">Civil</option>
+            </select>
+
+            <label for="year_of_study">Year of Study</label>
+            <input type="text" id="year_of_study" name="year_of_study" placeholder="Enter your year of study" required>
+
+            <label for="team_lead">Team Lead Name</label>
+            <input type="text" id="team_lead" name="team_lead" placeholder="Enter team lead name" required>
+
+            <label for="startup_domain">Choice of Products Preferred</label>
+            <select id="startup_domain" name="startup_domain" required>
+                <option value="" disabled selected>Select Your Choice*</option>
+                <option value="Health">Health</option>
+                <option value="Cloud & IT">Cloud & IT</option>
+                <option value="EdTech">EdTech</option>
+                <option value="Artificial intelligence">Artificial intelligence</option>
+                <option value="Robotics">Robotics</option>
+                <option value="Drone/UAV">Drone/UAV</option>
+                <option value="Defence">Defence</option>
+                <option value="Automobile (EV)">Automobile (EV)</option>
+                <option value="Fire & Safety">Fire & Safety</option>
+                <option value="FinTech/BSFI">FinTech/BSFI</option>
+                <option value="AgriTech">AgriTech</option>
+                <option value="Food Tech">Food Tech</option>
+                <option value="CleanTech">CleanTech</option>
+                <option value="Meta/Gaming">Meta/Gaming</option>
+                <option value="RealTech">RealTech</option>
+                <option value="Cyber Tech">Cyber Tech</option>
+                <option value="Renewable Energy">Renewable Energy</option>
+                <option value="Logistic/Travel">Logistic/Travel</option>
+                <option value="Traditional">Traditional</option>
+                <option value="Incubator & Accelerator">Incubator & Accelerator</option>
+            </select>
+            <button type="submit" class="btn">Register</button>
+        </form>
+    </div>
+</body>
+</html>
