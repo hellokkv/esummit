@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $team_lead = $conn->real_escape_string($_POST['team_lead']);
     $startup_domain = $conn->real_escape_string($_POST['startup_domain']);
 
-    // Prepare SQL statement to insert form data into the marketing_participants table
+    // Prepare SQL statement 
     $sql = "INSERT INTO marketing_participants (phone_number, email, department, year_of_study, team_lead, startup_domain)
             VALUES ('$phone_number', '$email', '$department', '$year_of_study', '$team_lead', '$startup_domain')";
 
@@ -32,8 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         header("Location: https://rzp.io/rzp/ikshiGenai");
         exit(); // Always exit after a redirect
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error; // Handle SQL error
-    }
+        echo "Error: " . $sql . "<br>" . $conn->error; }
 }
 
 $conn->close();

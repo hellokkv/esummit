@@ -1,9 +1,9 @@
 <?php
 // Database configuration
-$host = 'localhost'; // Change if your database is hosted elsewhere
+$host = 'localhost'; 
 $db_name = 'esummit';
-$username = 'root'; // Change to your database username
-$password = ''; // Change to your database password
+$username = 'root'; 
+$password = ''; 
 
 // Create connection
 $conn = new mysqli($host, $username, $password, $db_name);
@@ -15,10 +15,10 @@ if ($conn->connect_error) {
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    // Ensure correct array keys
+    
     $phone_number = $conn->real_escape_string($_POST['phone_number']);
     $email = $conn->real_escape_string($_POST['email']);
-    $department = $conn->real_escape_string($_POST['department']); // Ensure this matches the HTML form field name
+    $department = $conn->real_escape_string($_POST['department']); 
     $year_of_study = $conn->real_escape_string($_POST['year_of_study']);
     $team_lead = $conn->real_escape_string($_POST['team_lead']);
     $startup_domain = $conn->real_escape_string($_POST['startup_domain']);
@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Handle file upload
     $file_upload = $_FILES['file_upload']['name'];
     $file_tmp = $_FILES['file_upload']['tmp_name'];
-    $file_destination = 'ideathon-uploads/' . $file_upload; // Adjust the upload path as necessary
+    $file_destination = 'ideathon-uploads/' . $file_upload; 
 
     // Check if the file was uploaded successfully
     if (!empty($file_upload) && move_uploaded_file($file_tmp, $file_destination)) {
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($conn->query($sql) === TRUE) {
             // Redirect to Razorpay payment gateway after successful registration
             header("Location: https://rzp.io/rzp/ikshigen");
-            exit(); // Ensure no further code is executed after redirection
+            exit(); 
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
